@@ -22,6 +22,12 @@ defmodule Tradenara.Router do
     resources "/sessions", SessionController, only: [:new, :create, :delete]
   end
 
+  scope "/manage", Tradenara do
+    pipe_through [:browser, :authenticate_user]
+
+    resources "/companies", CompanyController
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", Tradenara do
   #   pipe_through :api

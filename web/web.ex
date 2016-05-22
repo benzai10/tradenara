@@ -36,6 +36,7 @@ defmodule Tradenara.Web do
 
       import Tradenara.Router.Helpers
       import Tradenara.Gettext
+      import Tradenara.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
@@ -58,6 +59,8 @@ defmodule Tradenara.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      import Tradenara.Auth, only: [authenticate_user: 2] # New import
     end
   end
 
