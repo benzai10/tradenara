@@ -9,12 +9,13 @@ defmodule Tradenara.Company do
     field :zipcode, :string
     field :city, :string
     belongs_to :user, Tradenara.User
+    belongs_to :category, Tradenara.Category
 
     timestamps
   end
 
   @required_fields ~w(name description)
-  @optional_fields ~w()
+  @optional_fields ~w(category_id)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
@@ -25,5 +26,6 @@ defmodule Tradenara.Company do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> assoc_constraint(:category)
   end
 end

@@ -9,3 +9,10 @@
 #
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
+alias Tradenara.Repo
+alias Tradenara.Category
+
+for category <- ~w(Export Import Machines Steel Paper Cars) do
+    Repo.get_by(Category, name: category) ||
+      Repo.insert!(%Category{name: category})
+end
