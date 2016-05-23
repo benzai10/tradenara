@@ -26,6 +26,7 @@ defmodule Tradenara.ConnCase do
       import Ecto.Query, only: [from: 1, from: 2]
 
       import Tradenara.Router.Helpers
+      import Tradenara.TestHelpers
 
       # The default endpoint for testing
       @endpoint Tradenara.Endpoint
