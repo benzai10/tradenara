@@ -17,3 +17,7 @@ config :tradenara, Tradenara.Repo,
   database: "tradenara_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Ease up the number of hashing rounds
+config :comeonin, :bcrypt_log_rounds, 4
+config :comeonin, :pbkdf2_rounds, 1
