@@ -19,9 +19,7 @@
             <li class="menu-text">TradeNara</li>
             <%= if @current_user do %>
               <li><%= @current_user.username %></li>
-              <li>
-                <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-              </li>
+              <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
             <% else %>
               <li><%= link "Register", to: user_path(@conn, :new) %></li>
               <li><%= link "Log in", to: session_path(@conn, :new) %></li>
@@ -39,7 +37,8 @@
       </div>
       <!-- </main> -->
 
-      <%= render "script.html", conn: @conn %>
+      <script src="<%= static_path(@conn, "/js/jquery.min.js") %>"></script>
+      <%#= render "script.html", conn: @conn %>
     </div> <!-- /container -->
   </body>
 </html>
