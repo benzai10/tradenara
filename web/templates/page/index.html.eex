@@ -1,4 +1,6 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
-  <p class="lead">A business platform that<br />enables new opportunities.</p>
+<div class="small-12 columns">
+  <div class="callout">
+    <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
+    <p class="lead">A business platform that<br />enables new opportunities.</p>
+  </div>
 </div>
