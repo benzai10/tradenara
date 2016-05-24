@@ -15,7 +15,7 @@
     <div class="row">
       <div class="top-bar">
         <div class="top-bar-left">
-          <ul class="menu">
+          <ul class="dropdown menu" data-dropdown-menu>
             <li class="menu-text">TradeNara</li>
             <%= if @current_user do %>
               <li><%= @current_user.username %></li>
