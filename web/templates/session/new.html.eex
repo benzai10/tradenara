@@ -1,13 +1,13 @@
 <div class="medium-6 medium-centered large-4 large-centered columns">
   <%= form_for @conn, session_path(@conn, :create), [as: :session], fn f -> %>
     <div class="row column log-in-form">
-      <h4 class="text-center">Log in with your username</h4>
-      <div class="form-group">
+      <h4 class="text-center">Login</h4>
+      <label>Username
         <%= text_input f, :username, placeholder: "Username" %>
-      </div>
-      <div class="form-group">
+      </label>
+      <label>Password
         <%= password_input f, :password, placeholder: "Password" %>
-      </div>
+      </label>
       <%= submit "Log in", class: "button expanded" %>
     </div>
   <% end %>
