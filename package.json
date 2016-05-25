@@ -8,11 +8,12 @@
     "javascript-brunch": "~1.8.0",
     "uglify-js-brunch": "~1.7.0",
     "phoenix": "file:deps/phoenix",
-    "phoenix_html": "file:deps/phoenix_html"
+    "phoenix_html": "file:deps/phoenix_html",
+    "jquery": "file:deps/jquery"
   },
   "devDependencies": {
-    "foundation-sites": "^6.2.1",
     "jquery": "^2.2.4",
+    "foundation-sites": "^6.2.1",
     "motion-ui": "^1.2.2",
     "sass-brunch": "^2.6.3"
   }
