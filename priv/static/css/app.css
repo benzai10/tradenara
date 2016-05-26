@@ -5326,6 +5326,11 @@ table.hover tr:nth-of-type(even):hover {
   padding: 1rem !important;
   border-radius: 3px; }
 
+/* line 21, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.thumbnail img {
+  height: 84px;
+  width: 128px; }
+
 /* $darker-gray: #2a2a2a; */
 /* html, body { */
 /*   height: 100%; */

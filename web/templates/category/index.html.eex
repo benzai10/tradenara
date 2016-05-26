@@ -1,0 +1,16 @@
+<div class="row column">
+  <h2 class="text-center">Categories</h2>
+</div>
+
+<div class="row small-up-3">
+  <%= for category <- @categories do %>
+    <div class="column">
+      <a href="<%= category_path(@conn, :show, category) %>">
+      <div class="callout">
+        <img src=<%= "/images/#{category.name}.jpg"  %>/>
+        <h3 class="text-center"><%= category.name %></h3>
+      </div>
+      </a>
+    </div>
+  <% end %>
+</div>

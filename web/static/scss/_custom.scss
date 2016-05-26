@@ -18,6 +18,11 @@ $form-radius: $global-radius;
   border-radius: $form-radius;
 }
 
+.thumbnail img {
+  height: 84px;
+  width: 128px;
+}
+
 // Put custom styles here
 /* $darker-gray: #2a2a2a; */
 

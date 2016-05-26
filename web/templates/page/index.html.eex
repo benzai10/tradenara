@@ -1,6 +1,14 @@
-<div class="small-12 columns">
+<div class="small-12 medium-6 columns">
   <div class="callout">
     <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
     <p class="lead">A business platform that<br />enables new opportunities.</p>
+    <%= link "Show Categories", to: category_path(@conn, :index), class: "button" %>
+  </div>
+</div>
+<div class="small-12 medium-6 columns">
+  <div class="callout">
+    <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
+    <p class="lead">A business platform that<br />enables new opportunities.</p>
+    <%= link "Show Categories", to: category_path(@conn, :index), class: "button" %>
   </div>
 </div>
