@@ -12,7 +12,7 @@
 alias Tradenara.Repo
 alias Tradenara.Category
 
-for category <- ~w(Export Import Machines Steel Paper Cars) do
+for category <- ~w(Machines Food Cosmetics) do
     Repo.get_by(Category, name: category) ||
       Repo.insert!(%Category{name: category})
 end
