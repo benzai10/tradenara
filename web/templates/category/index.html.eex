@@ -1,25 +1,4 @@
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li class="menu-text">
-        <%= link "SourceKorea", to: page_path(@conn, :index) %>
-      </li>
-      <%= if @current_user do %>
-        <li><%= @current_user.username %></li>
-        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
-      <% else %>
-        <li><%= link "Register", to: user_path(@conn, :new) %></li>
-        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-      <li><input type="search" placeholder="Search"></li>
-      <li><button type="button" class="button">Search</button></li>
-    </ul>
-  </div>
-</div>
+<%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
 
 <div class="row column">
   <h2 class="text-center">Categories</h2>
