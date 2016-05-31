@@ -1,3 +1,26 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">
+        <%= link "SourceKorea", to: page_path(@conn, :index) %>
+      </li>
+      <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+      <% else %>
+        <li><%= link "Register", to: user_path(@conn, :new) %></li>
+        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
+
 <div class="row column">
   <h2 class="text-center">Categories</h2>
 </div>
@@ -6,10 +29,10 @@
   <%= for category <- @categories do %>
     <div class="column">
       <a href="<%= category_path(@conn, :show, category) %>">
-      <div class="callout">
-        <img src=<%= "/images/#{category.name}.jpg"  %>/>
-        <h3 class="text-center"><%= category.name %></h3>
-      </div>
+        <div class="callout">
+          <img src=<%= "/images/#{category.name}.jpg"  %>/>
+          <h3 class="text-center"><%= category.name %></h3>
+        </div>
       </a>
     </div>
   <% end %>

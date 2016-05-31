@@ -1,14 +1,36 @@
-<div class="small-12 medium-6 columns">
-  <div class="callout">
-    <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
-    <p class="lead">A business platform that<br />enables new opportunities.</p>
-    <%= link "Show Categories", to: category_path(@conn, :index), class: "button" %>
-  </div>
-</div>
-<div class="small-12 medium-6 columns">
-  <div class="callout">
-    <h2><%= gettext "Welcome to %{name}", name: "TradeNara!" %></h2>
-    <p class="lead">A business platform that<br />enables new opportunities.</p>
-    <%= link "Show Categories", to: category_path(@conn, :index), class: "button" %>
+<div class="landing-page">
+  <header class="header">
+    <nav aria-label="Navigation" role="navigation">
+      <ul class="breadcrumbs">
+        <%= if @current_user do %>
+          <li><%= @current_user.username %></li>
+          <li>
+            <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
+          </li>
+        <% else %>
+          <li><%= link "Register", to: user_path(@conn, :new) %></li>
+          <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+  <h1>Welcome to SourceKorea</h1>
+  <div class="row columns">
+    <div class="medium-6 column">
+      <div class="callout target-group">
+        <h3>Korean Companies</h3>
+        <p>Benefits here...</p>
+        <p>Features here...</p>
+        <%= link "Check your company", to: company_path(@conn, :index), class: "button" %>
+      </div>
+    </div>
+    <div class="medium-6 column">
+      <div class="callout target-group">
+        <h3>Int'l Buyers</h3>
+        <p>Benefits here...</p>
+        <p>Features here...</p>
+        <%= link "Find your business", to: category_path(@conn, :index), class: "button" %>
+      </div>
+    </div>
   </div>
 </div>

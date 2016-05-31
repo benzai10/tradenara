@@ -1,9 +1,8 @@
 defmodule Tradenara.CompanyController do
   use Tradenara.Web, :controller
-
   alias Tradenara.Company
 
-  plug :scrub_params, "company" when action in [:create, :update]
+  # plug :scrub_params, "company" when action in [:create, :update]
 
   alias Tradenara.Category
 
@@ -24,9 +23,14 @@ defmodule Tradenara.CompanyController do
   end
 
   def index(conn, _params, user) do
-    companies = Repo.all(user_companies(user))
+    companies = Repo.all(Company)
     render(conn, "index.html", companies: companies)
   end
+
+  # def index(conn, _params, user) do
+  #   companies = Repo.all(user_companies(user))
+  #   render(conn, "index.html", companies: companies)
+  # end
 
   def new(conn, _params, user) do
     changeset =

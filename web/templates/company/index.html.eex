@@ -1,38 +1,42 @@
-<h2>Listing companies</h2>
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu>
+      <li class="menu-text">
+        <%= link "SourceKorea", to: page_path(@conn, :index) %>
+      </li>
+      <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+      <% else %>
+        <li><%= link "Register", to: user_path(@conn, :new) %></li>
+        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="top-bar-right">
+    <ul class="menu">
+      <li><input type="search" placeholder="Search"></li>
+      <li><button type="button" class="button">Search</button></li>
+    </ul>
+  </div>
+</div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Url</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Street</th>
-      <th>Zipcode</th>
-      <th>City</th>
+<div class="row columns">
+  <div class="medium-12 column">
+  <h1>Top Korean Companies</h1>
+  </div>
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for company <- @companies do %>
-    <tr>
-      <td><%= company.user_id %></td>
-      <td><%= company.url %></td>
-      <td><%= company.name %></td>
-      <td><%= company.description %></td>
-      <td><%= company.street %></td>
-      <td><%= company.zipcode %></td>
-      <td><%= company.city %></td>
-
-      <td class="text-right">
-        <%= link "Show", to: company_path(@conn, :show, company), class: "btn btn-default btn-xs" %>
-        <%= link "Edit", to: company_path(@conn, :edit, company), class: "btn btn-default btn-xs" %>
-        <%= link "Delete", to: company_path(@conn, :delete, company), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
-
-<%= link "New company", to: company_path(@conn, :new) %>
+  <%= for company <- @companies do %>
+    <div class="medium-4 column">
+      <a href="<%= company_path(@conn, :show, company) %>">
+        <div class="callout">
+          <h4><%= company.name %></h4>
+          <p><%= company.description %></p>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>
+<div class="row columns">
+  <%= link "New company", to: manage_company_path(@conn, :new) %>
+</div>

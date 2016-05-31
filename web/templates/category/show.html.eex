@@ -1,20 +1,112 @@
+<div class="row">
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <ul class="menu">
+        <li class="menu-text">
+          <%= link "SourceKorea", to: page_path(@conn, :index) %>
+        </li>
+        <%= if @current_user do %>
+          <li><%= @current_user.username %></li>
+          <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+        <% else %>
+          <li><%= link "Register", to: user_path(@conn, :new) %></li>
+          <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="top-bar-right">
+      <ul class="menu">
+        <li class="menu-text"><input type="search" placeholder="Search"></li>
+        <li class="menu-text"><button type="button" class="button">Search</button></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <div class="row columns">
-  <h2><%= @category.name %></h2>
+  <div class="column">
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><%= link "Home", to: page_path(@conn, :index) %></li>
+        <li><%= link "Categories", to: category_path(@conn, :index) %></li>
+        <li>
+          <span class="show-for-sr">Current: </span> <%= @category.name %>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </div>
 
 <div class="row columns">
   <div class="medium-3 column">
-    <img src=<%= "/images/#{@category.name}.jpg" %> />
+      <ul class="vertical accordion-menu menu" data-accordion-menu>
+        <li>
+          <a href="#"><%= @category.name %></a>
+          <ul class="menu vertical sublevel-1">
+            <li>
+              <a href="#">Sub-item 1</a>
+              <ul class="menu vertical sublevel-2">
+                <li><a class="subitem" href="#">Thing 1</a></li>
+                <li><a class="subitem" href="#">Thing 2</a></li>
+                <li><a class="subitem" href="#">Thing 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Sub-item 2</a>
+              <ul class="menu vertical sublevel-2">
+                <li>
+                  <a href="#">Super-sub-item 1</a>
+                  <ul class="menu vertical sublevel-3">
+                    <li><a class="subitem" href="#">Thing 1</a></li>
+                    <li><a class="subitem" href="#">Thing 2</a></li>
+                  </ul>
+                </li>
+                <li><a class="subitem" href="#">Thing 2</a></li>
+              </ul>
+            </li>
+            <li><a class="subitem" href="#">Thing 1</a></li>
+            <li><a class="subitem" href="#">Thing 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Item 2</a>
+          <ul class="menu vertical sublevel-1">
+            <li><a class="subitem" href="#">Thing 1</a></li>
+            <li><a class="subitem" href="#">Thing 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Item 3</a>
+          <ul class="menu vertical sublevel-1">
+            <li><a class="subitem" href="#">Thing 1</a></li>
+            <li><a class="subitem" href="#">Thing 2</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Item 4</a>
+          <ul class="menu vertical sublevel-1">
+            <li>
+              <a href="#">Sub-item 3</a>
+              <ul class="menu vertical sublevel-2">
+                <li><a class="subitem" href="#">Thing 1</a></li>
+                <li><a class="subitem" href="#">Thing 2</a></li>
+              </ul>
+            </li>
+            <li><a class="subitem" href="#">Thing 1</a></li>
+            <li><a class="subitem" href="#">Thing 2</a></li>
+          </ul>
+        </li>
+      </ul>
   </div>
   <div class="medium-9 column">
     <div class="media-object">
       <div class="media-object-section">
         <div class="thumbnail">
-          <img src=<%= "/images/#{@category.name}.jpg" %> />
+          <img src=<%= "http://placehold.it/200x100" %> />
         </div>
       </div>
       <div class="media-object-section">
-        <h4>Dreams feel real while we're in them.</h4>
+        <h6>Dreams feel real while we're in them.</h6>
         <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
       </div>
     </div>
@@ -23,11 +115,11 @@
     <div class="media-object">
       <div class="media-object-section">
         <div class="thumbnail">
-          <img src=<%= "/images/#{@category.name}.jpg" %> />
+          <img src=<%= "http://placehold.it/200x100" %> />
         </div>
       </div>
       <div class="media-object-section">
-        <h4>Dreams feel real while we're in them.</h4>
+        <h6>Dreams feel real while we're in them.</h6>
         <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
       </div>
     </div>
@@ -36,11 +128,11 @@
     <div class="media-object">
       <div class="media-object-section">
         <div class="thumbnail">
-          <img src=<%= "/images/#{@category.name}.jpg" %> />
+          <img src=<%= "http://placehold.it/200x100" %> />
         </div>
       </div>
       <div class="media-object-section">
-        <h4>Dreams feel real while we're in them.</h4>
+        <h6>Dreams feel real while we're in them.</h6>
         <p>I'm going to improvise. Listen, there's something you should know about me... about inception. An idea is like a virus, resilient, highly contagious. The smallest seed of an idea can grow. It can grow to define or destroy you.</p>
       </div>
     </div>
