@@ -5324,104 +5324,150 @@ table.hover tr:nth-of-type(even):hover {
 body {
   /* background-color: #eee; */ }
 
-/* line 20, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 19, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.nav-section {
+  padding-left: 0px;
+  padding-right: 0px; }
+  /* line 22, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  .nav-section h1 {
+    border-left: 4px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700; }
+
+/* line 31, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.main-section h1 {
+  border-left: 4px solid black;
+  padding: 2px;
+  font-size: 12px;
+  font-weight: 700; }
+
+/* line 37, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.main-section .column, .main-section .columns {
+  padding: 2px; }
+
+/* line 40, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.main-section .callout {
+  padding: 2px; }
+  /* line 42, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  .main-section .callout h2 {
+    font-size: 12px;
+    padding: 2px;
+    margin-top: 3px; }
+  /* line 47, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  .main-section .callout p {
+    font-size: 12px;
+    margin: 0; }
+
+/* line 54, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+.info-section {
+  padding-left: 0px;
+  padding-right: 0px; }
+  /* line 57, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  .info-section h1 {
+    border-left: 4px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700; }
+
+/* line 66, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .header li, .header a {
   color: white; }
 
-/* line 25, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 71, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .landing-page {
   background: url("/images/seoul.jpg") no-repeat center center;
   background-size: cover;
   height: 100%; }
-  /* line 29, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  /* line 75, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
   .landing-page h1 {
     color: white;
     text-align: center;
     padding-top: 12rem;
     padding-bottom: 4rem; }
 
-/* line 37, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 83, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .target-group {
   background: rgba(0, 0, 0, 0.5);
   border: 2px solid white; }
-  /* line 40, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  /* line 86, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
   .target-group h3, .target-group p {
     color: white; }
 
-/* line 45, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 91, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .log-in-form {
   border: 1px solid #cacaca;
   padding: 1rem !important;
   border-radius: 3px; }
 
-/* line 51, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 97, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .thumbnail img {
   height: 84px;
   width: 128px; }
 
-/* line 57, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 103, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .media-object-section p {
   font-size: 0.9rem; }
 
-/* line 69, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 115, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .is-accordion-submenu-parent a {
   background: #4d5158; }
 
-/* line 74, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 120, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .is-accordion-submenu a {
   background: #35383d; }
 
-/* line 79, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 125, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 [data-accordion-menu] .is-accordion-submenu-parent[aria-expanded="true"] a.subitem::before {
   content: "\f016";
   font-family: FontAwesome;
   margin-right: 1rem; }
 
-/* line 87, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 133, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 [data-accordion-menu] .is-accordion-submenu-parent[aria-expanded="true"] a::before {
   content: "\f07c";
   font-family: FontAwesome;
   margin-right: 1rem; }
 
-/* line 96, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 142, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 [data-accordion-menu] .is-accordion-submenu-parent[aria-expanded="false"] a::before {
   content: "\f07b";
   font-family: FontAwesome;
   margin-right: 1rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-1 {
   text-indent: 1rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-2 {
   text-indent: 2rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-3 {
   text-indent: 3rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-4 {
   text-indent: 4rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-5 {
   text-indent: 5rem; }
 
-/* line 105, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 151, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .sublevel-6 {
   text-indent: 6rem; }
 
-/* line 111, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 157, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 [data-accordion-menu] a {
   color: #fff;
   box-shadow: inset 0 -1px #41444a; }
-  /* line 116, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+  /* line 162, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
   [data-accordion-menu] a::after {
     border-color: #fff transparent transparent; }
 
-/* line 124, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
+/* line 170, /Users/mischa/Documents/Projects/tradenara/web/static/scss/_custom.scss */
 .menu > li:not(.menu-text) > a {
   padding: 1.2rem 1rem; }
 

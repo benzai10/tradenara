@@ -16,6 +16,52 @@ body {
   /* background-color: #eee; */
 }
 
+.nav-section {
+  padding-left: 0px;
+  padding-right: 0px;
+  h1 {
+    border-left: 4px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
+.main-section {
+  h1 {
+    border-left: 4px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .column {
+    padding: 2px;
+  }
+  .callout {
+    padding: 2px;
+    h2 {
+      font-size: 12px;
+      padding: 2px;
+      margin-top: 3px;
+    }
+    p {
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
+
+.info-section {
+  padding-left: 0px;
+  padding-right: 0px;
+  h1 {
+    border-left: 4px solid black;
+    padding: 2px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+}
+
 .header {
   li, a {
     color: white;

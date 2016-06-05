@@ -1,4 +1,4 @@
-<%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
+<%#= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
 
 <div class="row columns">
   <div class="medium-12 column">

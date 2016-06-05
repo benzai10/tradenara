@@ -58,7 +58,8 @@ defmodule Tradenara.CompanyController do
   end
 
   def show(conn, %{"id" => id}, user) do
-    company = Repo.get!(user_companies(user), id)
+    # company = Repo.get!(user_companies(user), id)
+    company = Repo.get!(Company, id)
     render(conn, "show.html", company: company)
   end
 

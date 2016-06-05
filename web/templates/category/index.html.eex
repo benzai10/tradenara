@@ -1,18 +1,37 @@
 <%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
 
-<div class="row column">
-  <h2 class="text-center">Categories</h2>
+<div class="row">
+  <div class="nav-section medium-2 column">
+    <h1>NAVIGATION</h1>
+  </div>
+
+  <div class="main-section medium-8 column">
+    <h1>SEARCH</h1>
+    <p>Here comes the search box</p>
+    <h1>ARTICLES</h1>
+    <p>Showing articles here...</p>
+    <h1>COMPANIES</h1>
+    <p>Showing companies here...</p>
+    <%= render Tradenara.CompanyView, "index.html", conn: @conn, companies: @companies %>
+    <h1>CATEGORIES</h1>
+    <div class="row columns">
+    <%= for category <- @categories do %>
+      <div class="medium-4 column">
+        <a href="<%= category_path(@conn, :show, category) %>">
+          <div class="callout">
+            <img src=<%= "/images/#{category.name}.jpg"  %>/>
+            <h2 class="text-center"><%= category.name %></h2>
+            <p>Some categoriy stats</p>
+            <p>More of this here...</p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="info-section medium-2 column">
+    <h1>INFO/REGISTER</h1>
+  </div>
 </div>
 
-<div class="row small-up-3">
-  <%= for category <- @categories do %>
-    <div class="column">
-      <a href="<%= category_path(@conn, :show, category) %>">
-        <div class="callout">
-          <img src=<%= "/images/#{category.name}.jpg"  %>/>
-          <h3 class="text-center"><%= category.name %></h3>
-        </div>
-      </a>
-    </div>
-  <% end %>
-</div>
