@@ -16,11 +16,10 @@
         <%= link "Delete", to: article_path(@conn, :delete, article), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
       </div>
     <% end %>
+    <%= if @current_user do %>
+      <%= link "New article", to: article_path(@conn, :new) %>
+    <% end %>
   </div>
-
-  <%= if @current_user do %>
-    <%= link "New article", to: article_path(@conn, :new) %>
-  <% end %>
 
   <div class="info-section medium-2 column">
     <h1>INFO/REGISTER</h1>

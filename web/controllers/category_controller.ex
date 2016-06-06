@@ -4,12 +4,17 @@ defmodule Tradenara.CategoryController do
   alias Tradenara.Company
   alias Tradenara.Article
 
-  def index(conn, _params) do
+  def index(conn, params) do
     categories = Repo.all(Category)
     companies = Repo.all(Company)
     articles = Repo.all(Article)
     render(conn, "index.html", categories: categories, companies: companies, articles: articles)
   end
+
+  # # def index(conn, {"search_term" => search_term}) do
+  # def index(conn, params) do
+  #   render(conn, "results.html")
+  # end
 
   def show(conn, %{"id" => id}) do
     category = Repo.get!(Category, id)

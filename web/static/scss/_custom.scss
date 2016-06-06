@@ -16,6 +16,10 @@ body {
   /* background-color: #eee; */
 }
 
+[class*="column"]+[class*="column"]:last-child {
+  float: left !important;
+}
+
 .nav-section {
   padding-left: 0px;
   padding-right: 0px;

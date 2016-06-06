@@ -1,0 +1,53 @@
+<%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
+
+<div class="row">
+  <div class="nav-section medium-2 column">
+    <h1>SEARCH TERM</h1>
+    <%= form_for @conn, search_path(@conn, :index), [name: :search], fn f -> %>
+      <%= text_input f, :query, placeholder: "#{@query}" %>
+      <%= submit "Search", class: "button" %>
+    <% end %>
+  </div>
+
+  <div class="main-section medium-8 column">
+    <div class="row">
+    <h1>SEARCH RESULTS IN COMPANIES</h1>
+    <%= for company <- @companies do %>
+      <div class="medium-4 column end">
+        <a href="<%= company_path(@conn, :show, company) %>">
+          <div class="callout">
+            <h6><%= String.upcase(company.name) %></h6>
+            <p><%= company.description %></p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+    </div>
+    <div class="row">
+    <h1>SEARCH RESULTS IN ARTICLES</h1>
+    <%= for article <- @articles do %>
+      <div class="medium-4 column end">
+        <a href="<%= article_path(@conn, :show, article) %>">
+          <div class="callout">
+            <h6><%= String.upcase(article.title) %></h6>
+            <p><%= String.slice(article.content, 0..99) <> "..." %></p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+  <div class="info-section medium-2 column">
+    <h1>INFO/REGISTER</h1>
+    <ul>
+      <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+      <% else %>
+        <li><%= link "Register", to: user_path(@conn, :new) %></li>
+        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

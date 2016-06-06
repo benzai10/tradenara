@@ -15,7 +15,7 @@ defmodule Tradenara.Company do
   end
 
   @required_fields ~w(name description)
-  @optional_fields ~w(category_id)
+  @optional_fields ~w(category_id url)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

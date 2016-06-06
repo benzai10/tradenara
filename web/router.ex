@@ -23,6 +23,7 @@ defmodule Tradenara.Router do
     resources "/categories", CategoryController, only: [:index, :show]
     resources "/companies", CompanyController, only: [:index, :front, :show]
     resources "/articles", ArticleController
+    post "/search", SearchController, :index
   end
 
   scope "/manage", as: :manage do
