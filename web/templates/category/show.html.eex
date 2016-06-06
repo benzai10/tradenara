@@ -3,7 +3,7 @@
 <div class="row">
   <div class="nav-section medium-2 column">
     <h1>CATEGORY</h1>
-    <img src=<%= "/images/#{@category.name}.jpg"  %>/>
+    <img src=<%= "/images/#{String.downcase(@category.name)}.jpg"  %>/>
   </div>
 
   <div class="main-section medium-8 column">
