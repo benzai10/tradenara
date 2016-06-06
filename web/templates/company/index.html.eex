@@ -1,21 +1,37 @@
-<%#= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
+<%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
 
-<div class="row columns">
-  <div class="medium-12 column">
-  <h1>Top Korean Companies</h1>
+<div class="row">
+  <div class="nav-section medium-2 column">
+    <h1>COMPANIES</h1>
   </div>
 
-  <%= for company <- @companies do %>
-    <div class="medium-4 column">
-      <a href="<%= company_path(@conn, :show, company) %>">
-        <div class="callout">
-          <h4><%= company.name %></h4>
-          <p><%= company.description %></p>
-        </div>
-      </a>
-    </div>
+  <div class="main-section medium-8 column">
+    <h1>DIRECTORY</h1>
+    <%= for company <- @companies do %>
+      <div class="medium-4 column">
+        <a href="<%= company_path(@conn, :show, company) %>">
+          <div class="callout">
+            <h6><%= String.upcase(company.name) %></h6>
+            <p><%= company.description %></p>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+  <%= if @current_user do %>
+    <%= link "New company", to: manage_company_path(@conn, :new) %>
   <% end %>
-</div>
-<div class="row columns">
-  <%= link "New company", to: manage_company_path(@conn, :new) %>
+
+  <div class="info-section medium-2 column">
+    <h1>INFO/REGISTER</h1>
+    <ul>
+      <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+      <% else %>
+        <li><%= link "Register", to: user_path(@conn, :new) %></li>
+        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+      <% end %>
+    </ul>
+  </div>
 </div>

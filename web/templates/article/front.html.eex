@@ -1,0 +1,12 @@
+<div class="row columns">
+  <%= for article <- @articles do %>
+    <div class="medium-4 column">
+      <a href="<%= article_path(@conn, :show, article) %>">
+        <div class="callout">
+          <h6><%= article.title %></h6>
+          <p><%= String.slice(article.content, 0..99) <> "..." %></p>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>

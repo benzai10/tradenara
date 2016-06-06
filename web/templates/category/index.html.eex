@@ -2,17 +2,16 @@
 
 <div class="row">
   <div class="nav-section medium-2 column">
-    <h1>NAVIGATION</h1>
+    <h1>FRONT PAGE</h1>
   </div>
 
   <div class="main-section medium-8 column">
     <h1>SEARCH</h1>
     <p>Here comes the search box</p>
     <h1>ARTICLES</h1>
-    <p>Showing articles here...</p>
+    <%= render Tradenara.ArticleView, "front.html", conn: @conn, articles: @articles %>
     <h1>COMPANIES</h1>
-    <p>Showing companies here...</p>
-    <%= render Tradenara.CompanyView, "index.html", conn: @conn, companies: @companies %>
+    <%= render Tradenara.CompanyView, "front.html", conn: @conn, companies: @companies %>
     <h1>CATEGORIES</h1>
     <div class="row columns">
     <%= for category <- @categories do %>
@@ -20,7 +19,7 @@
         <a href="<%= category_path(@conn, :show, category) %>">
           <div class="callout">
             <img src=<%= "/images/#{category.name}.jpg"  %>/>
-            <h2 class="text-center"><%= category.name %></h2>
+            <h6 class="text-center"><%= category.name %></h6>
             <p>Some categoriy stats</p>
             <p>More of this here...</p>
           </div>
@@ -32,6 +31,15 @@
 
   <div class="info-section medium-2 column">
     <h1>INFO/REGISTER</h1>
+    <ul>
+      <%= if @current_user do %>
+        <li><%= @current_user.username %></li>
+        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
+      <% else %>
+        <li><%= link "Register", to: user_path(@conn, :new) %></li>
+        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
 

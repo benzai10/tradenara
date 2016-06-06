@@ -21,7 +21,8 @@ defmodule Tradenara.Router do
     resources "/users", UserController, only: [:index, :show, :new, :create]
     resources "/sessions", SessionController, only: [:new, :create, :delete]
     resources "/categories", CategoryController, only: [:index, :show]
-    resources "/companies", CompanyController, only: [:index, :show]
+    resources "/companies", CompanyController, only: [:index, :front, :show]
+    resources "/articles", ArticleController
   end
 
   scope "/manage", as: :manage do

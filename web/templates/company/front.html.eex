@@ -1,0 +1,12 @@
+<div class="row columns">
+  <%= for company <- @companies do %>
+    <div class="medium-4 column">
+      <a href="<%= company_path(@conn, :show, company) %>">
+        <div class="callout">
+          <h6><%= company.name %></h6>
+          <p><%= company.description %></p>
+        </div>
+      </a>
+    </div>
+  <% end %>
+</div>

@@ -32,6 +32,11 @@ defmodule Tradenara.CompanyController do
   #   render(conn, "index.html", companies: companies)
   # end
 
+  def front(conn, _params, user) do
+    companies = Repo.all(Company)
+    render(conn, "front.html", companies: companies)
+  end
+
   def new(conn, _params, user) do
     changeset =
       user
