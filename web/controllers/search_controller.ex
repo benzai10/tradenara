@@ -6,9 +6,9 @@ defmodule Tradenara.SearchController do
 
   def index(conn, %{"search" => %{"query" => query}}) do
     # do the actual search using 'query'
-    company_query = from c in Company, where: like(c.name, ^("%#{query}%"))
+    company_query = from c in Company, where: ilike(c.name, ^("%#{query}%"))
     companies = Repo.all(company_query)
-    article_query = from a in Article, where: like(a.content, ^("%#{query}%"))
+    article_query = from a in Article, where: ilike(a.content, ^("%#{query}%"))
     articles = Repo.all(article_query)
     render(conn, "index.html", companies: companies, articles: articles, query: query)
   end
