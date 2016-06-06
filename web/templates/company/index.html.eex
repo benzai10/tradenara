@@ -17,10 +17,10 @@
         </a>
       </div>
     <% end %>
+    <%= if @current_user do %>
+      <%= link "New company", to: manage_company_path(@conn, :new) %>
+    <% end %>
   </div>
-  <%= if @current_user do %>
-    <%= link "New company", to: manage_company_path(@conn, :new) %>
-  <% end %>
 
   <div class="info-section medium-2 column">
     <h1>INFO/REGISTER</h1>
