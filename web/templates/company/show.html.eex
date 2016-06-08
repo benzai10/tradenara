@@ -3,6 +3,7 @@
 <div class="row">
   <div class="nav-section medium-2 column">
     <h1>COMPANY</h1>
+    <%= render Tradenara.SharedView, "session.html", conn: @conn, current_user: @current_user %>
   </div>
 
   <div class="main-section medium-8 column">
@@ -22,18 +23,5 @@
       <%= link "Edit", to: manage_company_path(@conn, :edit, @company) %>
     <% end %>
     <%= link "Back", to: company_path(@conn, :index) %>
-  </div>
-
-  <div class="info-section medium-2 column">
-    <h1>INFO/REGISTER</h1>
-    <ul>
-      <%= if @current_user do %>
-        <li><%= @current_user.username %></li>
-        <li><%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %></li>
-      <% else %>
-        <li><%= link "Register", to: user_path(@conn, :new) %></li>
-        <li><%= link "Log in", to: session_path(@conn, :new) %></li>
-      <% end %>
-    </ul>
   </div>
 </div>
