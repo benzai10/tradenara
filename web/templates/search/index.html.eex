@@ -13,7 +13,7 @@
           <div class="input-group">
             <%= text_input f, :query, placeholder: "#{@query}", class: "input-group-field" %>
             <div class="input-group-button">
-              <%= submit "Search", class: "button" %>
+              <%= submit "GO", class: "button" %>
             </div>
           </div>
         <% end %>

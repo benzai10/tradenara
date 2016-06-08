@@ -37,7 +37,8 @@ defmodule Tradenara.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.9"},
      {:comeonin, "~> 2.4"},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:mailgun, "~> 0.1.2"}]
   end
 
   # Aliases are shortcut or tasks specific to the current project.

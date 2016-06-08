@@ -2,7 +2,7 @@
   <div class="top-bar-left">
     <ul class="dropdown menu" data-dropdown-menu>
       <li class="menu-text">
-        <%= link "SourceKorea", to: page_path(@conn, :index) %>
+        <%= link "SourceKorea", to: category_path(@conn, :index) %>
       </li>
     </ul>
   </div>
