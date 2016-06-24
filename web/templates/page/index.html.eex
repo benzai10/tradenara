@@ -1,36 +1,79 @@
+<%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user  %>
 <div class="landing-page">
-  <header class="header">
-    <nav aria-label="Navigation" role="navigation">
-      <ul class="breadcrumbs">
-        <%= if @current_user do %>
-          <li><%= @current_user.username %></li>
-          <li>
-            <%= link "Log out", to: session_path(@conn, :delete, @current_user), method: "delete" %>
-          </li>
-        <% else %>
-          <li><%= link "Register", to: user_path(@conn, :new) %></li>
-          <li><%= link "Log in", to: session_path(@conn, :new) %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </header>
-  <h1>Welcome to SourceKorea</h1>
-  <div class="row columns">
-    <div class="medium-6 column">
-      <div class="callout target-group">
-        <h3>Korean Companies</h3>
-        <p>Benefits here...</p>
-        <p>Features here...</p>
-        <%= link "Check your company", to: company_path(@conn, :index), class: "button" %>
-      </div>
+  <h1 class="text-center">Kick-off Your Business with Korea</h1>
+</div>
+<div class="row columns section-1">
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-newspaper-o fa-2x"></i>
+      <h5>Informed</h5>
+      <p>
+        Find latest news and opportunities in your industry in Korea.
+      </p>
     </div>
-    <div class="medium-6 column">
-      <div class="callout target-group">
-        <h3>Int'l Buyers</h3>
-        <p>Benefits here...</p>
-        <p>Features here...</p>
-        <%= link "Find your business", to: category_path(@conn, :index), class: "button" %>
-      </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-trophy fa-2x"></i>
+      <h5>Visible</h5>
+      <p>
+        Present your Korean company to the world and be found by the right people.
+      </p>
+    </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-bullhorn fa-2x"></i>
+      <h5>Communicative</h5>
+      <p>
+        Get your value propositions actively communicated to create new business.
+      </p>
+    </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-exchange fa-2x"></i>
+      <h5>Proactive</h5>
+      <p>
+        Execute proactively on the opportunities to keep your advantage.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="row columns">
+  <div class="medium-4 column">
+    <div class="callout info-panel">
+      <h1>CATEGORIES</h1>
+      <%= for category <- @categories do %>
+        <ul class="vertical dropdown menu"
+          data-dropdown-menu style="max-width: 500px;"
+          data-closing-time="0">
+          <li>
+            <a href="<%= category_path(@conn, :show, category) %>">
+              <%= category.name %>
+            </a>
+            <ul class="menu subcategories-menu"
+              data-closing-time="0">
+              <li><a href="#">Subcategory (coming soon)</a></li>
+              <li><a href="#">Subcategory (coming soon)</a></li>
+            </ul>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+  <div class="medium-8 column">
+    <div class="callout article-panel">
+      <h1>LATEST NEWS</h1>
+      <p>
+        <%= render Tradenara.ArticleView, "front.html", conn: @conn, articles: @articles %>
+      </p>
+    </div>
+    <div class="callout article-panel">
+      <h1>COMPANY DIRECTORY</h1>
+      <p>
+        <%= render Tradenara.CompanyView, "front.html", conn: @conn, companies: @companies %>
+      </p>
     </div>
   </div>
 </div>

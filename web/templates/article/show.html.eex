@@ -1,21 +1,68 @@
 <%= render Tradenara.SharedView, "navbar.html", conn: @conn, current_user: @current_user %>
 
-<div class="row">
-  <div class="nav-section medium-2 column">
-    <h1>ARTICLE</h1>
-    <%= render Tradenara.SharedView, "session.html", conn: @conn, current_user: @current_user %>
-  </div>
-
-  <div class="main-section medium-8 column">
-    <h1><%= String.upcase(@article.title) %></h1>
+<div class="row columns section-1">
+  <div class="medium-3 column value-proposition">
     <div class="callout">
+      <i class="fa fa-newspaper-o fa-2x"></i>
+      <h5>Informed</h5>
       <p>
-        <%= @article.content %>
+        Find latest news and opportunities in your industry in Korea.
       </p>
+    </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-trophy fa-2x"></i>
+      <h5>Visible</h5>
+      <p>
+        Present your Korean company to the world and be found by the right people.
+      </p>
+    </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-bullhorn fa-2x"></i>
+      <h5>Communicative</h5>
+      <p>
+        Get your value propositions actively communicated to create new business.
+      </p>
+    </div>
+  </div>
+  <div class="medium-3 column value-proposition">
+    <div class="callout">
+      <i class="fa fa-exchange fa-2x"></i>
+      <h5>Proactive</h5>
+      <p>
+        Execute proactively on the opportunities to keep your advantage.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row columns">
+  <div class="medium-3 column">
+    <div class="callout info-panel">
+      <h1>COMPANY</h1>
+    </div>
+  </div>
+  <div class="medium-6 column">
+    <div class="callout article-show-panel">
+      <h1><%= String.upcase(@article.title) %></h1>
+      <div class="article-content">
+        <%= raw(@article.content) %>
+      </div>
+      <p class="text-center">
       <%= if @current_user do %>
-        <%= link "Edit", to: article_path(@conn, :edit, @article) %>
+        <%= link "EDIT", to: article_path(@conn, :edit, @article), class: "small button" %>
       <% end %>
-      <%= link "Back", to: article_path(@conn, :index) %>
+      <%= link "ALL ARTICLES", to: article_path(@conn, :index), class: "small button" %>
+      </p>
+    </div>
+  </div>
+  <div class="medium-3 column">
+    <div class="callout info-panel">
+      <h1>USER PANEL</h1>
+        <%= render Tradenara.SharedView, "session.html", conn: @conn, current_user: @current_user %>
     </div>
   </div>
 
