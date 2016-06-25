@@ -37,11 +37,15 @@ p {
   padding-left: 0px;
   padding-right: 0px;
   h1 {
-    border-left: 4px solid black;
+    border-left: ;: 4px solid black;
     padding: 2px;
     font-size: 12px;
     font-weight: 700;
   }
+}
+
+.logo {
+  margin-left: 30px;
 }
 
 .submenu {
@@ -164,6 +168,13 @@ p {
   p {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .company-url {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding-top: 6px;
+    padding-bottom: 6px;
   }
 }
 
