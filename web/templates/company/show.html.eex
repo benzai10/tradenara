@@ -43,7 +43,8 @@
   <div class="medium-3 column">
     <div class="callout info-panel">
       <h1>COMPANY</h1>
-      <% if !is_nil(@company.url) do %>
+      <img src=<%= "#{@company.front_image}" %>>
+      <%= if !is_nil(@company.url) do %>
         <p class="company-url">URL: <%= link @company.url, to: @company.url %></p>
       <% end %>
     </div>

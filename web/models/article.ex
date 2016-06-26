@@ -5,6 +5,9 @@ defmodule Tradenara.Article do
     field :title, :string
     field :content, :string
     field :image, :string
+    field :front_image, :string
+    field :front_title, :string
+    field :front_content, :string
     belongs_to :category, Tradenara.Category
     belongs_to :author, Tradenara.Author
     belongs_to :company, Tradenara.Company
@@ -13,7 +16,7 @@ defmodule Tradenara.Article do
   end
 
   @required_fields ~w(title content)
-  @optional_fields ~w(image)
+  @optional_fields ~w(image front_image front_title front_content)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

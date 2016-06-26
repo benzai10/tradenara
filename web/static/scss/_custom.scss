@@ -33,11 +33,12 @@ h1 {
 p {
   font-family: 'Roboto', sans-serif;
 }
+
 .nav-section {
   padding-left: 0px;
   padding-right: 0px;
   h1 {
-    border-left: ;: 4px solid black;
+    border-left: 4px solid black;
     padding: 2px;
     font-size: 12px;
     font-weight: 700;
@@ -60,7 +61,7 @@ p {
   }
 }
 
-.article-show-panel{
+.article-show-panel {
   padding: 0;
   margin-bottom: 30px;
   h1 {
@@ -104,7 +105,7 @@ p {
     }
     p {
       font-size: 12px;
-      margin: 0;
+      margin: 0px;
     }
   }
 }
@@ -150,7 +151,7 @@ p {
   }
 }
 
-.info-panel{
+.info-panel {
   padding: 0;
   border-left: none;
   border-right: none;
@@ -178,7 +179,7 @@ p {
   }
 }
 
-.article-panel{
+.article-panel {
   padding: 0;
   margin-bottom: 30px;
   border-left: none;

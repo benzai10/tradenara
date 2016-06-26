@@ -4,7 +4,8 @@
       <a href="<%= company_path(@conn, :show, company) %>">
         <div class="callout">
           <h6><%= company.name %></h6>
-          <p><%= company.description %></p>
+          <img src=<%= "#{company.front_image}" %>>
+          <p><%= company.front_description %></p>
         </div>
       </a>
     </div>

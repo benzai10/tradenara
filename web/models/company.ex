@@ -8,6 +8,8 @@ defmodule Tradenara.Company do
     field :street, :string
     field :zipcode, :string
     field :city, :string
+    field :front_image, :string
+    field :front_description, :string
     belongs_to :user, Tradenara.User
     belongs_to :category, Tradenara.Category
 
@@ -15,7 +17,7 @@ defmodule Tradenara.Company do
   end
 
   @required_fields ~w(name description)
-  @optional_fields ~w(category_id url)
+  @optional_fields ~w(category_id url front_image front_description)
 
   @doc """
   Creates a changeset based on the `model` and `params`.

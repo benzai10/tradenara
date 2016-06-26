@@ -29,6 +29,18 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :front_image, class: "control-label" %>
+    <%= textarea f, :front_image, class: "form-control" %>
+    <%= error_tag f, :front_image %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :front_description, class: "control-label" %>
+    <%= textarea f, :front_description, class: "form-control" %>
+    <%= error_tag f, :front_description %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :street, class: "control-label" %>
     <%= text_input f, :street, class: "form-control" %>
     <%= error_tag f, :street %>
