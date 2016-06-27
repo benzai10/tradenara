@@ -2,9 +2,9 @@
   <%= for article <- @articles do %>
     <div class="medium-4 column">
       <a href="<%= article_path(@conn, :show, article) %>">
-        <div class="callout">
+        <div class="callout front-callout">
           <img src=<%= "#{article.front_image}" %>>
-          <h6><%= article.front_title %></h6>
+          <h2><%= article.front_title %></h2>
           <p><%= article.front_content %></p>
         </div>
       </a>

@@ -127,6 +127,10 @@ p {
   }
 }
 
+.footer {
+  
+}
+
 .landing-page {
   background: url("/images/seoul_1920x768.jpg") no-repeat center center;
   background-size: cover;
@@ -196,6 +200,20 @@ p {
   }
   .column {
     padding: 0;
+    padding-right: 10px;
+  }
+}
+
+.front-callout {
+  padding: 0;
+  h2 {
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: 14px;
+    padding-left: 10px;
     padding-right: 10px;
   }
 }
